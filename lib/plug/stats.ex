@@ -1,4 +1,4 @@
-defmodule WebRequestsStats do
+defmodule Plug.Stats do
   @moduledoc """
   This Plug emits metrics after every processed HTTP request.
 

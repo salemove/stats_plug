@@ -1,3 +1,3 @@
 ExUnit.start()
 
-Mox.defmock(WebRequestsStats.MetricsMock, for: WebRequestsStats.Behaviours.Backend)
+Mox.defmock(Plug.Stats.MetricsMock, for: Plug.Stats.Behaviours.Backend)

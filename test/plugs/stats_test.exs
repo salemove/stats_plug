@@ -1,11 +1,11 @@
-defmodule WebRequestsStats.StatsTest do
+defmodule Plug.StatsTest do
   use ExUnit.Case
 
   import Plug.Conn
   import Phoenix.ConnTest
   import Mox
 
-  alias WebRequestsStats.MetricsMock
+  alias Plug.Stats.MetricsMock
 
   setup :verify_on_exit!
 
@@ -20,8 +20,8 @@ defmodule WebRequestsStats.StatsTest do
     conn =
       build_conn(:post, "/resource")
       |> put_private(:phoenix_action, :create)
-      |> put_private(:phoenix_controller, WebRequestStats.DummyController)
-      |> WebRequestsStats.call(backend: MetricsMock, metric_name: "web.request")
+      |> put_private(:phoenix_controller, Plug.Stats.DummyController)
+      |> Plug.Stats.call(backend: MetricsMock, metric_name: "web.request")
 
     # Simulate request processing.
     Process.sleep(1)
@@ -32,7 +32,7 @@ defmodule WebRequestsStats.StatsTest do
   test "doesn't emit anything if request didn't reach Phoenix" do
     conn =
       build_conn()
-      |> WebRequestsStats.call(backend: MetricsMock, metric_name: "web.request")
+      |> Plug.Stats.call(backend: MetricsMock, metric_name: "web.request")
 
     send_resp(conn, 200, "Response OK")
   end
