@@ -46,7 +46,7 @@ defmodule WebRequestsStats do
       conn,
       fn conn ->
         stop_time = System.monotonic_time()
-        elapsed_ms = System.convert_time_unit(stop_time - start_time, :native, :millisecond)
+        elapsed_ms = native_to_milliseconds(stop_time - start_time)
 
         if processed_by_phoenix?(conn) do
           send_metric(conn, elapsed_ms, opts)
@@ -86,8 +86,8 @@ defmodule WebRequestsStats do
       controller_name = Macro.underscore(conn.private[:phoenix_controller])
       action_name = conn.private[:phoenix_action]
 
-      # Any initial string looking like "engagement_router_web/queue_controller/index"
-      # would result in "queue_controller.index"
+      # Any initial string looking like "my_app_web/my_controller/index"
+      # would result in "my_controller.index"
       "#{controller_name}/#{action_name}"
       |> String.split("/")
       |> Enum.drop(1)
@@ -98,5 +98,12 @@ defmodule WebRequestsStats do
 
   defp processed_by_phoenix?(conn) do
     conn.private[:phoenix_controller] && conn.private[:phoenix_action]
+  end
+
+  defp native_to_milliseconds(duration) do
+    # convert_time_unit rounds the number using the floor function. To get
+    # milliseconds with 3 decimal points we convert the duration to
+    # microseconds and then divide it by a thousand.
+    System.convert_time_unit(duration, :native, :microsecond) / 1000
   end
 end
