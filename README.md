@@ -4,7 +4,7 @@ This Plug is meant to help collect statistics about the time it takes your appli
 HTTP requests. It emits a value for the processing time after every processed HTTP request.
 
 The backend needs to provide a `histogram` function that the Plug uses to send the metrics over. This
-function's behavior is described in `WebRequestStats.Behaviours.Backend`.
+function's behavior is described in `Plug.Stats.Behaviours.Backend`.
 
 The metric emitted is called "web.request" (configurable) and
 contains the following tags:
