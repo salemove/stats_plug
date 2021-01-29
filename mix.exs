@@ -11,20 +11,18 @@ defmodule Plug.Stats.MixProject do
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
   def application do
     [
       extra_applications: [:logger]
     ]
   end
 
-  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:plug_cowboy, "~> 2.0"},
-      {:mox, "~> 1.0"},
-      {:phoenix, "~> 1.5"},
-      {:jason, "~> 1.0"}
+      {:plug, "~> 1.11"},
+      {:mox, "~> 1.0", only: :test},
+      {:phoenix, "~> 1.5", only: :test},
+      {:jason, "~> 1.0", only: :test}
     ]
   end
 end
