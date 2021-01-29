@@ -31,8 +31,6 @@ defmodule Plug.Stats do
     metric_name: "web.request"
   ]
 
-  # import Plug.Conn
-
   @impl Plug
   def init(opts \\ []) do
     Keyword.merge(@default_config, opts)
