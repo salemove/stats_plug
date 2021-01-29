@@ -1,10 +1,10 @@
-# Plug.Stats
+# PlugStats
 
 This Plug is meant to help collect statistics about the time it takes your application to process
 HTTP requests. It emits a value for the processing time after every processed HTTP request.
 
 The backend needs to provide a `histogram` function that the Plug uses to send the metrics over. This
-function's behavior is described in `Plug.Stats.Behaviours.Backend`.
+function's behavior is described in `PlugStats.Behaviours.Backend`.
 
 The metric emitted is called "web.request" (configurable) and
 contains the following tags:

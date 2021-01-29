@@ -1,4 +1,4 @@
-defmodule Plug.Stats.MixProject do
+defmodule PlugStats.MixProject do
   use Mix.Project
 
   def project do
