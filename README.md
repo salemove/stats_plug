@@ -15,8 +15,6 @@ contains the following tags:
 
 ## Installation
 
-TODO: Need to be made available in Hex.
-
 The package can be installed by adding `stats_plug` to your list of dependencies in `mix.exs`:
 
 ```elixir
@@ -27,7 +25,6 @@ def deps do
 end
 ```
 
-TODO: Remove this paragraph once all is in place.
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
+and published on [HexDocs](https://hexdocs.pm). The docs can
 be found at [https://hexdocs.pm/stats_plug](https://hexdocs.pm/stats_plug).
