@@ -1,10 +1,10 @@
-defmodule PlugStats.MixProject do
+defmodule Glia.StatsPlug.MixProject do
   use Mix.Project
 
   def project do
     [
       app: :stats_plug,
-      version: "1.0.0",
+      version: "1.0.1",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       description: description(),

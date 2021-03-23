@@ -14,7 +14,7 @@ defmodule Glia.StatsPlug do
 
   ## Configuration
 
-  Initialize the plug like this: `plug PlugStats, backend: ExStatsD`
+  Initialize the plug like this: `plug Glia.StatsPlug, backend: ExStatsD`
 
   """
 
