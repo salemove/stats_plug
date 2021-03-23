@@ -1,4 +1,4 @@
-defmodule PlugStats do
+defmodule Glia.StatsPlug do
   @moduledoc """
   This Plug emits metrics after every processed HTTP request.
 

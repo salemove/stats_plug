@@ -1,11 +1,11 @@
-defmodule PlugStatsTest do
+defmodule Glia.StatsPlugTest do
   use ExUnit.Case
 
   import Plug.Conn
   import Phoenix.ConnTest
   import Mox
 
-  alias PlugStats.MetricsMock
+  alias Glia.StatsPlug.MetricsMock
 
   setup :verify_on_exit!
 
@@ -20,8 +20,8 @@ defmodule PlugStatsTest do
     conn =
       build_conn(:post, "/resource")
       |> put_private(:phoenix_action, :create)
-      |> put_private(:phoenix_controller, PlugStats.DummyController)
-      |> PlugStats.call(backend: MetricsMock, metric_name: "web.request")
+      |> put_private(:phoenix_controller, Glia.StatsPlug.DummyController)
+      |> Glia.StatsPlug.call(backend: MetricsMock, metric_name: "web.request")
 
     # Simulate request processing.
     Process.sleep(1)
@@ -32,7 +32,7 @@ defmodule PlugStatsTest do
   test "doesn't emit anything if request didn't reach Phoenix" do
     conn =
       build_conn()
-      |> PlugStats.call(backend: MetricsMock, metric_name: "web.request")
+      |> Glia.StatsPlug.call(backend: MetricsMock, metric_name: "web.request")
 
     send_resp(conn, 200, "Response OK")
   end
