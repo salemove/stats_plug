@@ -1,3 +1,3 @@
 ExUnit.start()
 
-Mox.defmock(PlugStats.MetricsMock, for: PlugStats.Behaviours.Backend)
+Mox.defmock(Glia.StatsPlug.MetricsMock, for: Glia.StatsPlug.Behaviours.Backend)
