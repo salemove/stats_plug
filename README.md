@@ -1,4 +1,4 @@
-# PlugStats
+# Glia.StatsPlug
 
 This Plug is meant to help collect statistics about the time it takes your application to process
 HTTP requests. It emits a value for the processing time after every processed HTTP request.
@@ -20,7 +20,7 @@ The package can be installed by adding `stats_plug` to your list of dependencies
 ```elixir
 def deps do
   [
-    {:stats_plug, "~> 0.1.0"}
+    {:stats_plug, "~> 1.0.0"}
   ]
 end
 ```
