@@ -14,13 +14,7 @@ defmodule PlugStats do
 
   ## Configuration
 
-  In `config/config.exs`:
-
-    config :my_app, MyApp.Endpoint,
-      stats: [
-        backend: ExStatsD,
-        metric_name: "web.request"
-      ]
+  Initialize the plug like this: `plug PlugStats, backend: ExStatsD`
 
   """
 
