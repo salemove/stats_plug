@@ -34,8 +34,8 @@ jobs:
       - name: Set up Elixir
         uses: erlef/setup-beam@5304e04ea2b355f03681464e683d92e3b2f18451
         with:
-          otp-version: '27'
-          elixir-version: '1.18'
+          otp-version: '28.5'
+          elixir-version: '1.18.4'
 
       - name: Update project monitoring in Snyk
         # Never monitor without an explicit org: with SNYK_CFG_ORG empty the CLI
