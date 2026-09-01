@@ -22,7 +22,7 @@ defmodule Glia.StatsPlug.MixProject do
 
   defp deps do
     [
-      {:plug, "~> 1.11"},
+      {:plug, "~> 1.20"},
       {:mox, "~> 1.0", only: :test},
       {:phoenix, "~> 1.5", only: :test},
       {:jason, "~> 1.0", only: :test},
