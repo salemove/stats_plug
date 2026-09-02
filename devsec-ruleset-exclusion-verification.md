@@ -1,0 +1,1 @@
+Temporary canary verifying the org gitleaks ruleset exclusion (infrastructure-github#401): the failing Gitleaks Secret Scanning ruleset row should no longer appear on public-repo PRs, while the repo-local gitleaks-scan check stays green and required. Left open for inspection.
