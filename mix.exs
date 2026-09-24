@@ -25,7 +25,6 @@ defmodule Glia.StatsPlug.MixProject do
       {:plug, "~> 1.20"},
       {:mox, "~> 1.0", only: :test},
       {:phoenix, "~> 1.5", only: :test},
-      {:jason, "~> 1.0", only: :test},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
